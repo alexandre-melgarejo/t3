@@ -1,5 +1,7 @@
 # Roadmap do Projeto 'Tic-Tactics-Toe'
 
+> Atualizado em 03/11/2024
+
 ## 1. MVP (v0.1.0)
 - **Tecnologias**: HTML5, Bootstrap, JavaScript  
 - **Objetivo**: Construir um protótipo funcional com layout básico e jogabilidade essencial.  
