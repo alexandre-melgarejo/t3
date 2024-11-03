@@ -1,23 +1,26 @@
+# Ignore node_modules
+/node_modules/
 /vendor/
-node_modules/
-npm-debug.log
-yarn-error.log
 
-# Laravel 4 specific
-bootstrap/compiled.php
-app/storage/
+# Ignore logs
+*.log
 
-# Laravel 5 & Lumen specific
-public/storage
-public/hot
-
-# Laravel 5 & Lumen specific with changed public path
-public_html/storage
-public_html/hot
-
-storage/*.key
+# Ignore environment files
 .env
-Homestead.yaml
-Homestead.json
-/.vagrant
-.phpunit.result.cache
+.env.local
+.env.*.local
+
+# Ignore coverage reports
+/coverage/
+
+# Ignore build directories
+/dist/
+/build/
+
+# Ignore IDE files
+/.vscode/
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
