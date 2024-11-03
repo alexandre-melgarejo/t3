@@ -1,6 +1,25 @@
 // scripts/views/home.js
 
+document.addEventListener("DOMContentLoaded", function() {
+    console.log('home - DOMContentLoaded');
 
+    //window.onload = function() {
+
+    const playerX = localStorage.getItem('playerX');
+    const playerO = localStorage.getItem('playerO');
+
+    if (playerX) {
+        document.getElementById('playerX').value = playerX;
+    }
+
+    if (playerO) {
+        document.getElementById('playerO').value = playerO;
+    }
+
+});
+   
+
+// Atualiza os nomes enquanto são digitados
 function updateBattleText() {
     const playerX = document.getElementById('playerX').value || 'X';
     const playerO = document.getElementById('playerO').value || 'O';
@@ -14,15 +33,17 @@ document.getElementById('playerX').addEventListener('input', updateBattleText);
 document.getElementById('playerO').addEventListener('input', updateBattleText);
 
 function startGame() {
-    const playerX = document.getElementById('playerX').value;
-    const playerO = document.getElementById('playerO').value;
+    let playerX = document.getElementById('playerX').value;
+    let playerO = document.getElementById('playerO').value;
 
-    if (playerX && playerO) {
-        localStorage.setItem('playerX', playerX);
-        localStorage.setItem('playerO', playerO);
-        alert(`Boa sorte, ${playerX} e ${playerO}! Que vença o melhor!`);
-        // Redirecionamento ou inicialização do jogo pode ser adicionado aqui.
-    } else {
-        alert("Por favor, insira os nomes dos jogadores.");
-    }
+    localStorage.setItem('playerX', playerX);
+    localStorage.setItem('playerO', playerO);
+
+    playerX = playerX || 'X';
+    playerO = playerO || 'O';
+
+    alert(`Boa sorte, ${playerX} e ${playerO}! Que vença o melhor!`);
+
+    window.location.href = '/views/board.html';
+
 }
