@@ -32,11 +32,11 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull r
 ## Instalação
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/tic-tactics-toe.git
+   git clone https://github.com/alexandre-melgarejo/t3.git
    ```
 2. Navegue até o diretório do projeto:
    ```bash
-   cd tic-tactics-toe
+   cd t3
    ```
 3. Abra o arquivo `index.html` em seu navegador.
 
@@ -48,4 +48,4 @@ Obrigado por conferir o Tic-Tactics-Toe! Esperamos que você se divirta jogando!
 
 ---
 
-> **Nota**: Em desenvolvimento com muito 📚, ❤️, ☕ e com a ajuda do 🤖 [ChatGPT](https://www.openai.com/chatgpt), diretamente do Mato Grosso do Sul - Brasil!
+Desenvolvido com muito 📚, ❤️, ☕ e com a ajuda do 🤖 [ChatGPT](https://www.openai.com/chatgpt), diretamente do Mato Grosso do Sul - Brasil!
