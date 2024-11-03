@@ -9,15 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // document.getElementById('startTime').textContent = startTime;
 });
 
-// Outras funções do jogo
-function makeMove(index) {
-    // Implementar a lógica para registrar jogadas
-}
-
-function restartGame() {
-    // Implementar a lógica para reiniciar o jogo
-}
-
 function goHome() {
     window.location.href = 'home.html';
 }

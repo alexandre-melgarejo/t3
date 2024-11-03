@@ -59,17 +59,17 @@
                     </div>
                     <div class="col">
                         <div class="row w-100">
-                            <button type="button" onclick="restartGame()"    class="btn btn-warning">Reiniciar</button>
+                            <button type="button" onclick="restartGame()" class="btn btn-outline-secondary">Reiniciar</button>
                         </div>
                         <div class="row w-100">
-                            <button type="button" onclick="goHome()"         class="btn btn-info">Sair</button>
+                            <button type="button" onclick="goHome()"      class="btn btn-outline-danger">Sair</button>
                         </div>
                         <!-- <button type="button" onclick="showEmptyCells()" class="btn btn-light">Mostrar Espaços Vazios</button> -->
                     </div>
                 </div>
             </div>
 
-            <div class="w-100 text-center font-weight-bold lead text-muted" id="message">SUA VEZ RODRIGO</div>
+            <div class="w-100 text-center lead text-muted" id="message">MENSAGEM PARA O JOGADOR</div>
 
             <div id="gameBoard" class="container justify-content-center p-3">
                 <div class="row">
@@ -103,6 +103,7 @@
 
     <!-- External JavaScript -->
     <script src="/scripts/views/board.js"></script>
+    <script src="/scripts/engine/v0/runner.js"></script>
 </body>
 
 </html>
