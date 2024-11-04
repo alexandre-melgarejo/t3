@@ -1,10 +1,6 @@
 
 // Inicia pagina inicial do jogo
 document.addEventListener("DOMContentLoaded", function() {
-    console.log('home - DOMContentLoaded');
-
-    //window.onload = function() {
-
     const playerX = localStorage.getItem('playerX');
     const playerO = localStorage.getItem('playerO');
 
@@ -41,6 +37,6 @@ function startGame() {
     playerX = playerX || 'X';
     playerO = playerO || 'O';
 
-    window.location.href = './board.html';
+    window.location.href = './board.html'; // Mesmo nivel de home.html
 
 }
