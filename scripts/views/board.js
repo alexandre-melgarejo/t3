@@ -58,7 +58,7 @@ function showTurn() {
     console.log('showTurn - ' + currentPlayer);
 
     const playerName = localStorage.getItem('player' + currentPlayer);
-    showMessage('Vez de: ' + playerName, 'info');
+    showMessage('Vez de: <strong>' + playerName + '</strong>', 'info');
 }
 
 // Limpa e mostra o score
