@@ -1,5 +1,5 @@
-// scripts/views/home.js
 
+// Inicia pagina inicial do jogo
 document.addEventListener("DOMContentLoaded", function() {
     console.log('home - DOMContentLoaded');
 
@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 });
-   
 
 // Atualiza os nomes enquanto são digitados
 function updateBattleText() {
@@ -41,8 +40,6 @@ function startGame() {
 
     playerX = playerX || 'X';
     playerO = playerO || 'O';
-
-    alert(`Boa sorte, ${playerX} e ${playerO}! Que vença o melhor!`);
 
     window.location.href = '/views/board.html';
 

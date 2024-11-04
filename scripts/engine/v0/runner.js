@@ -1,5 +1,8 @@
 let board = Array(9).fill(null);
-let currentPlayer = 'X'; // Começa com o jogador X
+let starterPlayer = 'X'; // Começa com o jogador X
+let currentPlayer = starterPlayer;
+
+let gameOver = true; // Controla se o jogo acabou (winner ou draw)
 
 let countX = 0;
 let countO = 0;
@@ -10,9 +13,7 @@ function clearBoard() {
     console.log('clearBoard');
 
     board.fill(null);
-    document.querySelectorAll('.cell').forEach(cell => {
-        cell.textContent = '';
-    });    
+    showBoard(board);
 }
 
 // Limpar placar
@@ -30,40 +31,40 @@ function clearScore() {
 function restartGame() {
     console.log('restartGame');
 
-    currentPlayer = lastWinner || 'X';
+    gameOver = false;
 
     clearBoard();
     showTurn();
 }
 
-function makeMove(position) {
+// Registra o movimento
+async function makeMove(position) {
     console.log('makeMove');
 
-    if (!board[position]) {
+    if (gameOver) {
+        return;
+    }
 
-        let gameOver = true
+    if (board[position]) {
+        showMessage('Essa posição não está disponível.', 'danger');
+    } else {
 
         board[position] = currentPlayer;
-        document.getElementById(`cell${position}`).textContent = currentPlayer;
+        showBoard(board);
 
         if (checkWinner(currentPlayer)) {
-            setTimeout(() => {
-                alert(`${currentPlayer} venceu!`);
-                restartGame();
-            }, 300);            
+            const playerName = localStorage.getItem(`player${currentPlayer}`) || `Jogador ${currentPlayer}`;
+            await showMessage(`Parabéns ${playerName}, essa batalha foi sua! Comemore! `, 'success', true);
         } else if (checkDraw()) {
-            setTimeout(() => {
-                alert('Empate!');
-                restartGame();
-            }, 300);
+            await showMessage('A batalha está acirrada, tivemos um empate! ', 'warning', true);
         } else {
             currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
             gameOver = false;
+            showTurn();
         }
 
-        showTurn();
         if(gameOver) {
-            showScore();
+            restartGame();
         }
 
     }
@@ -74,28 +75,34 @@ function makeMove(position) {
 function checkWinner(player) {
     console.log('checkWinner');
 
+    let hasWinner = false;
+
     const winningCombinations = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8], // linhas
         [0, 3, 6], [1, 4, 7], [2, 5, 8], // colunas
         [0, 4, 8], [2, 4, 6] // diagonais
     ];
 
-    hasWinner = winningCombinations.some(combination => 
+    const arrayWinner = winningCombinations.find(combination =>
         combination.every(index => board[index] === player));
 
-    if (hasWinner) {
+    if (arrayWinner) {
 
+        // Quem ganhou, começa a proxima partida
         lastWinner = player;
-
-        if(hasWinner) {
-            if(player === 'X') {
-                countX++;
-            } else {
-                countO++;
-            }
+        currentPlayer = lastWinner;
+        if(player === 'X') {
+            countX++;
+        } else {
+            countO++;
         }
+        
+        hasWinner = true;
+        gameOver = true;
 
+        highlightWinnerCells(arrayWinner);
         saveScore();
+        showScore();
 
     }
 
@@ -109,13 +116,23 @@ function checkDraw() {
     const hasDraw = board.every(cell => cell);
 
     if(hasDraw){
+        // Reveza inicio em caso de empate
+        currentPlayer = starterPlayer === 'X' ? 'O' : 'X';
+        starterPlayer = currentPlayer;
+
+        gameOver = true;
+
         countDraw++;
+
+        highlightDrawCells();
         saveScore();
+        showScore();
     }
 
     return hasDraw;
 }
 
+// Grava o score
 function saveScore() {
     console.log('saveSCore');
 
