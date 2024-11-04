@@ -27,16 +27,17 @@ Este projeto é licenciado sob a [Apache License 2.0](LICENSE).
 - **Multiplayer Online**: Modo multiplayer online para competir com amigos ou estranhos.
 
 ## Como Contribuir
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.
+Sinta-se à vontade para abrir issues ou pull requests.
+Eu estou aprendendo js, suas contribuições serão sempre bem vindas!
 
 ## Instalação
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/alexandre-melgarejo/t3.git
+   git clone https://github.com/alexandre-melgarejo/tic-tactics-toe.git
    ```
 2. Navegue até o diretório do projeto:
    ```bash
-   cd t3
+   cd tic-tactics-toe
    ```
 3. Abra o arquivo `index.html` em seu navegador.
 

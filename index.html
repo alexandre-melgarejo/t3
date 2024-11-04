@@ -3,21 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic-Tactics-Toe - Em Construção</title>
+    <title>Tic-Tactics-Toe</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/site.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./styles/site.css">
+    <script src="./scripts/setup.js" defer></script>
 </head>
 <body>
-    <div class="container main-container">
+    <div class="container main-container text-center">
         <h1 class="display-3">Tic-Tactics-Toe</h1>
         <p class="lead">Estamos construindo algo incrível!</p>
-        <p>O jogo estará disponível em breve.</p>
+        <p class="lead">Prepare-se para um jogo emocionante de estratégia, onde você desafiará seus amigos em uma batalha épica e divertida de Tic-Tac-Toe! Quem será o grande campeão?</p>
+        <a href="./views/home.html" class="btn btn-success btn-lg mt-4">Jogar Agora</a>
     </div>
 
     <footer class="bg-light text-center py-4">
         <div class="container">
-            <p class="mb-1">&copy; 2024 Tic-Tactics-Toe. Todos os direitos reservados.</p>
-            <p class="mb-0">Desenvolvido com muito 📚, ❤️, ☕ e com a ajuda do 🤖 <a href="https://www.openai.com/chatgpt" target="_blank" class="text-primary">ChatGPT</a>, diretamente do Mato Grosso do Sul - Brasil!</p>
+            <div class="mt-1 text-center">
+                <p class="mb-1 d-inline">&copy; 2024 Tic-Tactics-Toe. Todos os direitos reservados.</p> 
+                | <span id="app-version" class="text-secondary fw-bold small"></span>
+                | <a href="./docs/roadmap.md" class="text-decoration-none mx-2" title="Roadmap" target="_blank"><i class="bi bi-compass"></i> Roadmap</a> 
+                | <a href="https://github.com/alexandre-melgarejo/tic-tactics-toe" class="text-decoration-none mx-2" title="Repositório do jogo" target="_blank"><i class="bi bi-github"></i> GitHub</a>
+            </div>
+            <p class="mb-0 small">Desenvolvido com muito 📚, ❤️, ☕ e com a ajuda do 🤖 <a href="https://www.openai.com/chatgpt" target="_blank" class="text-primary">ChatGPT</a>, diretamente do Mato Grosso do Sul - Brasil!</p>
         </div>
     </footer>
 

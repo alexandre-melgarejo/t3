@@ -1,0 +1,29 @@
+.cell {
+    height: 100px; /* Ajuste a altura das células */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 2px solid #000; /* Bordas internas */
+    border-top: 2px solid #000; /* Bordas internas */
+}
+
+.cell:first-child {
+    border-left: none;
+}
+
+.row:first-child .cell {
+    border-top: none;
+}
+
+.row:last-child .cell {
+    border-bottom: none;
+}
+
+.row .cell:last-child {
+    border-right: none; /* Remove a borda direita da última coluna */
+}
+
+.cell:hover {
+    cursor: pointer; /* Cursor para indicar que a célula é clicável */
+    background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
+}
