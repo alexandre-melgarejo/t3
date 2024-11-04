@@ -37,9 +37,6 @@ function startGame() {
     playerX = playerX || 'X';
     playerO = playerO || 'O';
 
-    window.location.href = './board.html';
-
-    console.log('href: ' + window.location.href);
-    console.log('pathname: ' + window.location.pathname);
+    window.location.href = './board.html'; // Mesmo nivel de home.html
 
 }
