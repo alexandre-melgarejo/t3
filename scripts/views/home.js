@@ -41,6 +41,6 @@ function startGame() {
     playerX = playerX || 'X';
     playerO = playerO || 'O';
 
-    window.location.href = '/views/board.html';
+    window.location.href = './board.html';
 
 }
